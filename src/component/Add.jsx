@@ -25,7 +25,7 @@ const Add = () => {
     const readValue=()=>{
 
          console.log(input)
-         axios.get("http://localhost:3000/add-course").then(
+         axios.post("http://localhost:3000/add-course").then(
             (response)=>{response.input}
          ).catch()
     }
