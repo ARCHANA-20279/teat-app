@@ -4,19 +4,19 @@ import Nav from './Nav'
 
 const Add = () => {
     const[input,changeInput]=useState({
-                "Teamid":"",
-                "Teamname":"",
-                "Teamleader":"",
-                "Leaderemail":"",
-                "LeaderPhone":"",
-                "CollegeName":"",
-                "Members":"",
-                "Project":"",
-                "Problem":"",
-                "Technology":"",
-                "Mentor":"",
-                "Date":"",
-                "Table":""
+        teamid:String,
+        teamname:String,
+        teamldname:String,
+        lemail:String,
+        lphone:String,
+        clgname:String,
+        noofmem:String,
+        projecttitle:String,
+        pstrack:String,
+        technostack:String,
+        mentname:String,
+        regdate:String,
+        tableno:String
                
     })
     const inputHandler=(event)=>{
@@ -25,7 +25,7 @@ const Add = () => {
     const readValue=()=>{
 
          console.log(input)
-         axios.get("http://localhost:3000/add-course").then(
+         axios.post("http://localhost:3000/add-team",input).then(
             (response)=>{response.input}
          ).catch()
     }
@@ -40,92 +40,92 @@ const Add = () => {
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <label htmlFor="" className="form-label">Teamid</label>
                     <input type="text" className="form-control"
-                    name="Teamid"
-                    value={input.Teamid}
+                    name="teamid"
+                    value={input.teamid}
                     onChange={inputHandler} />
                 </div>
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                      <label htmlFor="" className="form-label">Teamname</label>
                     <input type="text" className="form-control"
-                    name="Teamname"
-                    value={input.Teamname}
+                    name="teamname"
+                    value={input.teamname}
                     onChange={inputHandler} />
                 </div>
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                      <label htmlFor="" className="form-label">Teamleader</label>
                     <input type="text" className="form-control"
-                    name="Teamleader"
-                    value={input.Teamleader}
+                    name="teamldname"
+                    value={input.teamldname}
                     onChange={inputHandler} />
                 </div>
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                      <label htmlFor="" className="form-label">Leaderemail</label>
-                    <input type="text" className="form-control"
-                    name="Leaderemial"
-                    value={input.Leaderemail}
+                    <input type="email" className="form-control"
+                    name="lemail"
+                    value={input.lemail}
                     onChange={inputHandler} />
                 </div>
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                      <label htmlFor="" className="form-label">LeaderPhone</label>
                     <input type="text" className="form-control"
-                    name="LeaderPhone"
-                    value={input.LeaderPhone}
+                    name="lphone"
+                    value={input.lphone}
                     onChange={inputHandler} />
                 </div>
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                      <label htmlFor="" className="form-label">CollegeName</label>
                     <input type="text" className="form-control"
-                    name="CollegeName"
-                    value={input.CollegeName}
+                    name="clgname"
+                    value={input.clgname}
                     onChange={inputHandler} />
                 </div>
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                      <label htmlFor="" className="form-label">Members</label>
                     <input type="text" className="form-control"
-                    name="Members"
-                    value={input.Members}
+                    name="noofmem"
+                    value={input.noofmem}
                     onChange={inputHandler} />
                 </div>
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                      <label htmlFor="" className="form-label">Project</label>
                     <input type="text" className="form-control"
-                    name="Project"
-                    value={input.Project}
+                    name="projecttitle"
+                    value={input.projecttitle}
                     onChange={inputHandler} />
                 </div>
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                      <label htmlFor="" className="form-label">Problem</label>
                     <input type="text" className="form-control"
-                    name="Problem"
-                    value={input.Problem}
+                    name="pstrack"
+                    value={input.pstrack}
                     onChange={inputHandler} />
                 </div>
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                      <label htmlFor="" className="form-label">Technology</label>
                     <input type="text" className="form-control"
-                    name="Technology"
-                    value={input.Technology}
+                    name="technostack"
+                    value={input.technostack}
                     onChange={inputHandler} />
                 </div>
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                      <label htmlFor="" className="form-label">Mentor</label>
                     <input type="text" className="form-control"
-                    name="Mentor"
-                    value={input.Mentor}
+                    name="mentname"
+                    value={input.mentname}
                     onChange={inputHandler} />
                 </div>
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                      <label htmlFor="" className="form-label">Date</label>
                     <input type="text" className="form-control"
-                    name="Date"
-                    value={input.Date}
+                    name="regdate"
+                    value={input.regdate}
                     onChange={inputHandler} />
                 </div>
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <label htmlFor="" className="form-label">Table</label>
                     <input type="text" className="form-control"
-                    name="Table"
-                    value={input.Table}
+                    name="tableno"
+                    value={input.tableno}
                     onChange={inputHandler} />
 
                 </div>
