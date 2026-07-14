@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import Nav from './Nav'
 
 const Add = () => {
     const[input,changeInput]=useState({
@@ -30,6 +31,7 @@ const Add = () => {
     }
   return (
     <div>
+        <Nav />
 
 <div className="container">
     <div className="row">
